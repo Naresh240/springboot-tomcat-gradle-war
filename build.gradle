@@ -3,7 +3,8 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'war'
-    id 'maven-publish'    
+    id 'maven-publish'
+    id "org.sonarqube" version "3.3"    
 }
 
 group = 'com.example'
@@ -41,6 +42,16 @@ publishing {
                 password "admin123"
             }
         }
+
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.login", "16794c0a94e29d25c1920851bd6108a7c21819c7"
+        property "sonar.host.url", "http://54.89.210.168:9000/"
+        property "sonar.projectKey", "springboot-gradle-tomcat-war"
 
     }
 }
